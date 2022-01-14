@@ -1,0 +1,35 @@
+<p>usuario works!</p>
+<div class="alert alert-info text-center " role="alert" *ngIf="loading">
+    <h4 class="alert-heading">Cargando...</h4>
+    <p>
+      <i class="fa fa-sync fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0"></p>
+  </div>
+  
+  <div class="alert alert-danger text-center " role="alert" *ngIf="error">
+    <h4 class="alert-heading">Error...</h4>
+    <pre>
+      {{error | json}}
+    </pre>
+    <p class="mb-0"></p>
+  </div>
+
+<div class="row">
+    <div class="col-4">
+        <img [src]="usuario.avatar" class="img-thumbnail">
+    </div>
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <b>nombre: {{usuario.first_name}}</b>
+            </li>
+            <li class="list-group-item">
+                <b>apellido: {{usuario.last_name}}</b>
+            </li>
+            <li class="list-group-item">
+                <b>correo: {{usuario.email}}</b>
+            </li>
+        </ul>
+    </div>
+</div>
