@@ -33,3 +33,17 @@
         </ul>
     </div>
 </div>
+
+<div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4">
+  <div class="col" *ngFor="let usuario of usuarios">
+    <div class="card">
+      <img [src]="usuario.avatar" class="card-img-top w-50" >
+      <div class="card-body">
+        <h5 class="card-title">{{usuario.first_name}} {{usuario.last_name}}</h5>
+        <p class="card-text">{{usuario.email}}</p>
+        <span class="text-muted">ID: {{usuario.id}} </span>
+      </div>
+    </div>
+  </div>
+</div>
+

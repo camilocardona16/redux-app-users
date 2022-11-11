@@ -14,7 +14,9 @@ export class UsuarioComponent implements OnInit {
 
   usuario!:Usuario;
   loading:boolean=false;
-  error:any;
+  error: any;
+  
+  usuarios!:Usuario[]
 
   constructor(
     private router:ActivatedRoute,
@@ -27,6 +29,12 @@ export class UsuarioComponent implements OnInit {
       this.loading = loading;
       this.error = error;
       this.usuario =user;
+    })
+
+    this.store.select('usuarios').subscribe(({users,loading,error})=>{
+      this.loading = loading;
+      this.error = error;
+      this.usuarios =users;
     })
 
     this.router.params.subscribe(({id})=>{
